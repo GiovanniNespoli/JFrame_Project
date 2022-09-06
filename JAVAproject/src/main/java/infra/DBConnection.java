@@ -21,7 +21,7 @@ public class DBConnection {
     public boolean findUser(Connection con, String email, String password) {
         try {
             Statement stm = con.createStatement();
-            String sql = "SELECT * FROM User WHERE email =/" + email + "/AND password =/" + password;
+            String sql = "SELECT * FROM User WHERE email = \"" + email + "\"AND password =\"" + password +"\";";
             ResultSet rs = stm.executeQuery(sql);
 
             if (rs.next()) {
