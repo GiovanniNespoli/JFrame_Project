@@ -13,5 +13,7 @@ public class testeConnection {
         
         System.out.println( db.findUser(conexao, email, password));
         
+        db.listUser(conexao);
+        
     }
 }

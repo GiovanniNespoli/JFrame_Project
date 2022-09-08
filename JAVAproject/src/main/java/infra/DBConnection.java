@@ -3,9 +3,9 @@ package infra;
 import java.sql.*;
 
 public class DBConnection {
-
+    
     private static Connection conexao_MySql = null;
-
+    
     public Connection connectionMySql() {
         try {
             // Class.forName("com.mysql.jdbc.Driver");
@@ -14,28 +14,43 @@ public class DBConnection {
         } catch (Exception e) {
             System.out.println(e);
         }
-
+        
         return conexao_MySql;
     }
-
+    
     public boolean findUser(Connection con, String email, String password) {
         try {
             Statement stm = con.createStatement();
-            String sql = "SELECT * FROM User WHERE email = \"" + email + "\"AND password =\"" + password +"\";";
+            String sql = "SELECT * FROM User WHERE email = \"" + email + "\"AND password =\"" + password + "\";";
             ResultSet rs = stm.executeQuery(sql);
-
+            
             if (rs.next()) {
                 System.out.println("true");
                 return true;
             }
-
+            
             System.out.println("false");
             return false;
-
+            
         } catch (Exception e) {
             System.out.println(e);
             return false;
         }
     }
-
+    
+    public void listUser(Connection con) {
+        try {
+            Statement stm = con.createStatement();
+            String sql = "SELECT * FROM User";
+            ResultSet rs = stm.executeQuery(sql);
+            
+            while (rs.next()) {
+                System.out.println("Nome: "+rs.getString(1)+" Email: "+rs.getString(2));
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
 }
