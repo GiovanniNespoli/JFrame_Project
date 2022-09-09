@@ -56,8 +56,6 @@ public class JLogin extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 172, 184));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159641\\Downloads\\newLoginImage.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -76,19 +74,25 @@ public class JLogin extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Login");
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Bem vindo!");
 
+        emailInput.setEditable(false);
+        emailInput.setBackground(new java.awt.Color(200, 200, 200));
         emailInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailInputActionPerformed(evt);
             }
         });
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Email");
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Senha");
 
         loginBtn.setText("Login");
@@ -98,9 +102,14 @@ public class JLogin extends javax.swing.JFrame {
             }
         });
 
+        passwordInput.setEditable(false);
+        passwordInput.setBackground(new java.awt.Color(200, 200, 200));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Não tem uma conta ?");
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Cadastre-se");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,17 +137,15 @@ public class JLogin extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addComponent(jLabel2)))
-                        .addGap(20, 20, 20))
+                                .addComponent(jLabel2))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(80, 80, 80)
-                        .addComponent(loginBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loginBtn)))
+                .addGap(7, 7, 7)
                 .addComponent(jLabel3)
                 .addContainerGap(50, Short.MAX_VALUE))
         );
@@ -169,7 +176,7 @@ public class JLogin extends javax.swing.JFrame {
                             .addComponent(jButton2))
                         .addGap(18, 18, 18)
                         .addComponent(loginBtn)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout backGroundLayout = new javax.swing.GroupLayout(backGround);

@@ -18,7 +18,7 @@ public class connection {
     // Nome do usuário e senha com permissão de acesso ao BD. Você coloque de acordo com o
     // usuário e senha pertencente ao Banco de Dados
     private static final String usuario = "root";
-    private static final String senha = "Senai123";
+    private static final String senha = "20nov2004";
 
     public Connection connectionMySql() {
         try {
@@ -54,6 +54,15 @@ public class connection {
         try {
             Statement stmt = con.createStatement();
             stmt.execute("INSERT INTO User (name,email,password) VALUES(\"" + name + "\",\"" + email + "\",\"" + password + "\");");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void createNewRequest(Connection con, String userName, String phone, String CEP, String foodType, String food, int quantity) {
+        try {
+             Statement stmt = con.createStatement();
+             stmt.execute("INSERT INTO Request (nomeUsuario, telefone, CEP, foodType, food, quantity VALUES(\"" + userName + "\",\""+phone+"\",\""+CEP+"\",\""+foodType+"\",\""+food+"\",\""+quantity+"\");");
         } catch (Exception e) {
             System.out.println(e);
         }
